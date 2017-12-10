@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BRD - Boulder's Finest</title>
+    <script src="https://unpkg.com/vue"></script>
+    <!-- jq -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <!--     bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">    
+
+
+
+    <!-- main.css -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid header-font" id="jumbo">
+        <div class="container text-center">
+            <h1>Boulder Restaurant Directory</h1>
+            <p class="sub-head">A guide to Boulder's finest cusine</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- vue -->
+        <div>
+            <!-- Main Container -->
+
+                <div classs="row" id="mainbody">
+                    <form>
+                        <h3 id="label1">Search by Location | Cuisine </h3>
+
+                        <input id="whatToDo" type="text" placeholder="what (bars, restaurants, cafes...)" size="30" />
+                        <input id="place" type="text" placeholder="where..." size="30" />
+                        <button id="searchBtn">Search</button>
+                    </form>
+
+                </div>
+                <!-- end bootstrap collapse -->
+
+            <!-- end of #mainbody -->
+        </div>
+        <!-- end of main container -->
+
+        <!-- map -->
+            <div class="row">
+                <div id="map"></div>
+            </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container-fluid">
+        <div class="row col-xs-12">
+            <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">{LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
+        </div>
+    </div>
+
+    <!-- main.js -->
+    <script src="/js/main.js"></script>
+
+    <!-- places library -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCditWW_QbHS5b178NVjooCD4Fh3QocDBY&libraries=places&callback=initMap"></script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</body>
+
+</html>

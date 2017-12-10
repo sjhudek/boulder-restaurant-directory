@@ -1,0 +1,73 @@
+#jumbo {
+    color: white;
+    background-image: url(/images/header_1500x200.jpg);
+    margin: 0px auto 5px auto;
+    height: 200px;
+    padding-top: 20px;
+}
+
+.header-font {
+    font-family: 'Patua One', cursive;
+    font-size: 3rem;
+    padding: 2px auto;
+    text-shadow: 2px 2px #afafaf;
+}
+
+.sub-head {
+    font-size: 1.5rem;
+}
+
+#map {
+    height: 150rem;
+    width: 100%;
+    border: 2px solid black;
+}
+
+#mainbody {
+    height: auto;
+    border: 4px double black;
+    margin: 5px auto 10px 0px;
+    text-align: center;
+}
+
+.row1 {
+    background: yellow;
+    height: 15rem;
+}
+
+#label1 {
+    font-family: helvetica;
+    font-size: 1.5rem;
+}
+
+input {
+    text-align: center;
+    margin: 2px auto;
+}
+
+footer {
+    padding-top: 10px;
+    font-size: 0.95rem;
+    color: white;
+    height: 40px;
+    background-color: darkblue;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h3 {
+    font-weight: bold;
+    text-align: center;
+}
