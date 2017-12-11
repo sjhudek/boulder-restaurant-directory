@@ -23,59 +23,126 @@
 
 <body>
 
-
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid header-font" id="jumbo">
-        <div class="container text-center">
-            <h1>Boulder Restaurant Directory</h1>
-            <p class="sub-head">A guide to Boulder's finest cusine</p>
-        </div>
+<!-- **** Begin Modal Login **** -->
+<div class="container">
+    <div class="row col-md-3">
+      <button id="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </div>
+      <div id="id01" class="modal">
 
-    <div class="container">
-        <!-- vue -->
+        <form class="modal-content animate" action="/login" method="post">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
         <div>
-            <!-- Main Container -->
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Email" name="logemail" required>
 
-                <div classs="row" id="mainbody">
-                    <form>
-                        <h3 id="label1">Search by Location | Cuisine </h3>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="logpassword" required>
 
-                        <input id="whatToDo" type="text" placeholder="what (bars, restaurants, cafes...)" size="30" />
-                        <input id="place" type="text" placeholder="where..." size="30" />
-                        <button id="searchBtn">Search</button>
-                    </form>
-
-                </div>
-                <!-- end bootstrap collapse -->
-
-            <!-- end of #mainbody -->
+            <button type="submit">Login</button>
+            <input type="checkbox" checked="checked"> Remember me
         </div>
-        <!-- end of main container -->
 
-        <!-- map -->
-            <div class="row">
-                <div id="map"></div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+<!-- **** End Modal Login **** -->
+
+<!-- **** Modal Registration Form **** -->
+<div>
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+    <div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+      <form class="modal-content animate" action="/signUp" method="post">
+            <div class="container">
+              <input type="text" name="email" placeholder="E-mail" required="">
+              <input type="text" name="username" placeholder="Username" required="">
+              <input type="password" name="password" placeholder="Password" required="">
+              <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+              <input type="checkbox" checked="checked"> Remember me
+              <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+              <div class="row col-md-3">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit" class="modal-button signupbtn">Sign Up</button>
             </div>
+       </div>
+      </form>
     </div>
+  </div>
+</div>
+<!-- End Row -->
+</div>
+<!-- End container -->
+<!-- **** End Modal Registration Form **** -->
 
-    <!-- footer -->
-    <div class="container-fluid">
-        <div class="row col-xs-12">
-            <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">{LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid header-font" id="jumbo">
+    <div class="container text-center">
+        <h1>Boulder Restaurant Directory</h1>
+        <p class="sub-head">A guide to Boulder's finest cusine</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- vue -->
+    <div>
+        <!-- Main Container -->
+
+        <div class="row" id="mainbody">
+            <form>
+                <h3 id="label1">Search by Location | Cuisine </h3>
+
+                <div class="col-md-3">
+                <input id="whatToDo" type="text" placeholder="what (bars, restaurants, cafes...)" size="30" />
+            </div>
+
+            <div class="col-md-3">
+                <input id="place" type="text" placeholder="where..." size="30" />
+            </div>
+
+            <div class="col-md-3">
+                <button id="searchBtn">Search</button>
+            </div>
+            </form>
+
         </div>
+        <!-- end bootstrap collapse -->
+
+        <!-- end of #mainbody -->
     </div>
+    <!-- end of main container -->
 
-    <!-- main.js -->
-    <script src="/js/main.js"></script>
+    <!-- map -->
+    <div class="row">
+        <div id="map"></div>
+    </div>
+</div>
 
-    <!-- places library -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCditWW_QbHS5b178NVjooCD4Fh3QocDBY&libraries=places&callback=initMap"></script>
+<!-- footer -->
+<div class="container-fluid">
+    <div class="row col-xs-12">
+        <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">{LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
+    </div>
+</div>
+
+<!-- main.js -->
+<script src="/js/main.js"></script>
+
+<!-- places library -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCditWW_QbHS5b178NVjooCD4Fh3QocDBY&libraries=places&callback=initMap"></script>
 
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </body>
 
 </html>
