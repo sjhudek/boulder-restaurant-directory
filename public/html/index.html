@@ -23,84 +23,95 @@
 
 <body>
 
-<!-- **** Begin Modal Login **** -->
-<div class="container">
-    <div class="row col-md-3">
-      <button id="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-    </div>
-      <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/login" method="post">
-          <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="img_avatar2.png" alt="Avatar" class="avatar">
-        </div>
+    <div id="all">
+        <div class="container">
+            <div class="row">
 
-        <div>
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Email" name="logemail" required>
-
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="logpassword" required>
-
-            <button type="submit">Login</button>
-            <input type="checkbox" checked="checked"> Remember me
-        </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-    </form>
-</div>
-<!-- **** End Modal Login **** -->
-
-<!-- **** Modal Registration Form **** -->
-<div>
-    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
-    <div id="id02" class="modal">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
-      <form class="modal-content animate" action="/signUp" method="post">
-            <div class="container">
-              <input type="text" name="email" placeholder="E-mail" required="">
-              <input type="text" name="username" placeholder="Username" required="">
-              <input type="password" name="password" placeholder="Password" required="">
-              <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
-              <input type="checkbox" checked="checked"> Remember me
-              <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-              <div class="row col-md-3">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="submit" class="modal-button signupbtn">Sign Up</button>
+            <!-- Buttons -->
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6 text-right">
+                <button id="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+              </div>
             </div>
-       </div>
-      </form>
+
+              <!-- Modals -->
+
+              <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="/login" method="post">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  </div>
+
+                    <div class="">
+                        <p><label><b>Username</b></label></p>
+                        <p><input type="text" placeholder="Enter Email" name="logemail" required></p>
+
+                        <p><label><b>Password</b></label></p>
+                        <p><input type="password" placeholder="Enter Password" name="logpassword" required></p>
+
+                        <p><button type="submit">Login</button></p>
+                        <p><input type="checkbox" checked="checked"> Remember me</p>
+                    </div>
+
+                    <div class="" style="background-color:#f1f1f1">
+                        <p><button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></p>
+                        <p><span class="psw">Forgot <a href="#">password?</a></span></p>
+                    </div>
+                </form>
+              </div>
+        <!-- **** End Modal Login **** -->
+
+        <!-- **** Modal Registration Form **** -->
+        <div>
+            <div id="id02" class="modal">
+              <form class="modal-content animate" action="/signUp" method="post">
+              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+                <div class="">
+                  <p><input type="text" name="email" placeholder="E-mail" required=""></p>
+                  <p><input type="text" name="username" placeholder="Username" required=""></p>
+                  <p><input type="password" name="password" placeholder="Password" required=""></p>
+                  <p><input type="password" name="passwordConf" placeholder="Confirm Password" required=""></p>
+                  <input type="checkbox" checked="checked"> Remember me
+                  <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                  <div class="clearfix">
+                    <p><button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></p>
+                    <p><button type="submit" class="signupbtn">Sign Up</button></p>
+                </div>
+            </div>
+        </form>
     </div>
-  </div>
+</div>
 </div>
 <!-- End Row -->
+</div>
 </div>
 <!-- End container -->
 <!-- **** End Modal Registration Form **** -->
 
 <!-- Jumbotron -->
+
 <div class="jumbotron jumbotron-fluid header-font" id="jumbo">
+
     <div class="container text-center">
         <h1>Boulder Restaurant Directory</h1>
         <p class="sub-head">A guide to Boulder's finest cusine</p>
     </div>
 </div>
 
-<div class="container">
-    <!-- vue -->
-    <div>
-        <!-- Main Container -->
+<!-- vue -->
+<!-- Main Container -->
+<div class="container-fluid">
 
-        <div class="row" id="mainbody">
-            <form>
-                <h3 id="label1">Search by Location | Cuisine </h3>
+    <div class="row" id="mainbody">
+        <form>
+            <h3 id="label1">Search by Location | Cuisine </h3>
 
-                <div class="col-md-3">
+            <div class="col-md-3">
                 <input id="whatToDo" type="text" placeholder="what (bars, restaurants, cafes...)" size="30" />
             </div>
 
@@ -111,25 +122,24 @@
             <div class="col-md-3">
                 <button id="searchBtn">Search</button>
             </div>
-            </form>
+        </form>
 
-        </div>
-        <!-- end bootstrap collapse -->
-
-        <!-- end of #mainbody -->
     </div>
-    <!-- end of main container -->
+    <!-- end bootstrap collapse -->
 
-    <!-- map -->
-    <div class="row">
-        <div id="map"></div>
-    </div>
+    <!-- end of #mainbody -->
+</div>
+<!-- end of main container -->
+
+<!-- map -->
+<div class="row">
+    <div id="map"></div>
 </div>
 
 <!-- footer -->
 <div class="container-fluid">
     <div class="row col-xs-12">
-        <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">{LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
+        <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">A project of {LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
     </div>
 </div>
 
