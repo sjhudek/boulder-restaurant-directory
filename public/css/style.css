@@ -13,8 +13,13 @@
     text-shadow: 2px 2px #afafaf;
 }
 
+h1 {
+    margin-top: -10px;
+}
+
 .sub-head {
     font-size: 1.5rem;
+    margin-top: -30px;
 }
 
 /* Set a style for Login and Register buttons */

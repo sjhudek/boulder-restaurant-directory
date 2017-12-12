@@ -12,6 +12,9 @@
     <!--     bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Pure CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">    
 
@@ -41,7 +44,7 @@
 
               <div id="id01" class="modal">
 
-                <form class="modal-content animate" action="/login" method="post">
+                <form class="modal-content animate pure-form pure-form-aligned" action="/login" method="post">
                   <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                   </div>
@@ -68,7 +71,7 @@
         <!-- **** Modal Registration Form **** -->
         <div>
             <div id="id02" class="modal">
-              <form class="modal-content animate" action="/signUp" method="post">
+              <form class="modal-content animate pure-form pure-form-aligned" action="/signUp" method="post">
               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
                 <div class="">
                   <p><input type="text" name="email" placeholder="E-mail" required=""></p>
@@ -98,8 +101,10 @@
 <div class="jumbotron jumbotron-fluid header-font" id="jumbo">
 
     <div class="container text-center">
-        <h1>Boulder Restaurant Directory</h1>
-        <p class="sub-head">A guide to Boulder's finest cusine</p>
+        <div class="row">
+            <h1>Boulder Restaurant Directory</h1>
+            <p class="sub-head">A guide to Boulder's finest cusine</p>
+        </div>
     </div>
 </div>
 
@@ -129,8 +134,6 @@
 
     <!-- end of #mainbody -->
 </div>
-<!-- end of main container -->
-
 <!-- map -->
 <div class="row">
     <div id="map"></div>
@@ -142,6 +145,8 @@
         <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">A project of {LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
     </div>
 </div>
+<!-- end of main container -->
+
 
 <!-- main.js -->
 <script src="/js/main.js"></script>
