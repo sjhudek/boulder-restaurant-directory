@@ -57,7 +57,7 @@ function createListItem(place) {
     stars += '&star;'
   }
   var content = `
-  <div class="col-xs-4 pa-3 ma-3" style="height:150px; background-color: white; padding: 5px;"> 
+  <div class="col-xs-4 pa-3 ma-3" style="height:150px; padding: 5px;"> 
   <hr>
     <p>${place.name}</p>
     <p>${place.googleAddress}</p>
