@@ -12,13 +12,8 @@
     <!--     bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Pure CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">    
-
-
 
     <!-- main.css -->
     <link rel="stylesheet" href="/css/style.css">
@@ -26,28 +21,23 @@
 
 <body>
 
-
+    <div class="fullscreen-bg">
+    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <source src="video/722741015.mp4" type="video/mp4">
+        <!-- <source src="video/big_buck_bunny.mp4" type="video/mp4">
+        <source src="video/big_buck_bunny.ogv" type="video/ogg"> -->
+    </video>
+</div>
     <div id="all">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 
-            <!-- Buttons -->
-            <div class="row">
-              <div class="col-md-6"></div>
-              <div class="col-md-6 text-right">
-                <button id="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-                <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
-              </div>
-            </div>
-
-              <!-- Modals -->
-
-              <div id="id01" class="modal">
-
-                <form class="modal-content animate pure-form pure-form-aligned" action="/login" method="post">
-                  <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                  </div>
+                <!-- **** Modal Login Form **** -->
+                <div id="id01" class="modal">
+                    <form class="modal-content animate pure-form pure-form-aligned" action="/login" method="post">
+                      <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    </div>
 
                     <div class="">
                         <p><label><b>Username</b></label></p>
@@ -56,41 +46,42 @@
                         <p><label><b>Password</b></label></p>
                         <p><input type="password" placeholder="Enter Password" name="logpassword" required></p>
 
-                        <p><button type="submit">Login</button></p>
+                        <p><button type="submit"  class="btn btn-primary">Login</button></p>
                         <p><input type="checkbox" checked="checked"> Remember me</p>
                     </div>
 
-                    <div class="" style="background-color:#f1f1f1">
-                        <p><button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></p>
+                    <div>
+                        <p><button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger">Cancel</button></p>
                         <p><span class="psw">Forgot <a href="#">password?</a></span></p>
                     </div>
                 </form>
-              </div>
-        <!-- **** End Modal Login **** -->
-
-        <!-- **** Modal Registration Form **** -->
-        <div>
-            <div id="id02" class="modal">
-              <form class="modal-content animate pure-form pure-form-aligned" action="/signUp" method="post">
-              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
-                <div class="">
-                  <p><input type="text" name="email" placeholder="E-mail" required=""></p>
-                  <p><input type="text" name="username" placeholder="Username" required=""></p>
-                  <p><input type="password" name="password" placeholder="Password" required=""></p>
-                  <p><input type="password" name="passwordConf" placeholder="Confirm Password" required=""></p>
-                  <input type="checkbox" checked="checked"> Remember me
-                  <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-                  <div class="clearfix">
-                    <p><button type="submit" class="signupbtn">Sign Up</button></p>
-                    <p><button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></p>
-                </div>
             </div>
-        </form>
+            <!-- **** End Modal Login Form **** -->
+
+            <!-- **** Modal Registration Form **** -->
+            <div>
+                <div id="id02" class="modal">
+                  <form class="modal-content animate pure-form pure-form-aligned" action="/signUp" method="post">
+                      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+                      <div class="">
+                          <p><input type="text" name="email" placeholder="E-mail" required=""></p>
+                          <p><input type="text" name="username" placeholder="Username" required=""></p>
+                          <p><input type="password" name="password" placeholder="Password" required=""></p>
+                          <p><input type="password" name="passwordConf" placeholder="Confirm Password" required=""></p>
+                          <input type="checkbox" checked="checked"> Remember me
+                          <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                          <div class="clearfix">
+                            <p><button type="submit" class="signupbtn">Sign Up</button></p>
+                            <p><button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- **** End Modal Registration Form **** -->
     </div>
-</div>
-</div>
-<!-- End Row -->
+    <!-- End Row -->
 </div>
 </div>
 <!-- End container -->
@@ -99,9 +90,27 @@
 <!-- Jumbotron -->
 
 <div class="jumbotron jumbotron-fluid header-font" id="jumbo">
+    <!-- Login and Sign Up Buttons -->
+    <div class="container-fluid">
+            
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 text-right">
+                <button  class="btn btn-primary button-text" id="loginbtn" onclick="document.getElementById('id01').style.display='block'">Login</button>
+                <button  class="btn btn-primary button-text" onclick="document.getElementById('id02').style.display='block'">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <!-- End Login and Sign Up Buttons -->
+
 
     <div class="container text-center">
         <div class="row">
+
+
+
+
+            
             <h1>Boulder Restaurant Directory</h1>
             <p class="sub-head">A guide to Boulder's finest cusine</p>
         </div>
@@ -109,51 +118,45 @@
 </div>
 
 <!-- Search -->
-<div class="container">
+<div class="container-fluid search-container">
 
-    <div class="row" id="mainbody">
+    <div class="row">
         <form>
-            <h3 id="label1">Search by Location or Cuisine </h3>
+            <h3 id="label1">Search for Restaurants and Bars by Location or Cuisine </h3>
 
             <div class="row search-row">
 
-                <div class="col-md-4">
+                <div class="col-md-4 text-right ">
                     <input id="whatToDo" type="text" placeholder="what (bars, restaurants, cafes...)" size="30" />
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 text-center">
                     <input id="place" type="text" placeholder="City, State" size="30" />
                 </div>
 
-                <div class="col-md-4">
-                    <button id="searchBtn">Search</button>
+                <div class="col-md-4 text-left">
+                    <button id="searchBtn" class="btn btn-primary">Search</button>
                 </div>
+
             </div>
         </form>
-
     </div>
     <!-- End Search -->
 </div>
 
+<!-- map -->
 <div class="container">
-    <!-- map -->
     <div class="row">
-
-        <!-- Left column -->
-        <div class="col-sm-4" id="resultList">
-
-        </div>
-        <!-- End Left column -->
-
-        <div class="col-sm-8">
+        <div class="col-sm-12">
           <div id="map"></div>
-        </div>
-    </div>
+      </div>
+  </div>
 </div>
+<!-- end map -->
 
 <!-- footer -->
 <div class="container-fluid">
-    <div class="row col-xs-12">
+    <div class="row col">
         <footer>Boulder Resturant Directory | Copyright 2017 <a href="https://losobemarketing.com" target="_blank">A project of {LoSoBe} Marketing and Design</a>  All Rights Reserved</footer>
     </div>
 </div>
