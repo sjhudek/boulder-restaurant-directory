@@ -6,6 +6,42 @@ var bodyParser = require('body-parser');
 var google = require('googleapis');
 var googleStuff = require('./public/js/googleData');
 
+//====== Digital Ocean ======
+
+var express = require('express')
+var app = express()
+var HTTP = require('http')
+var HTTPS = require('https')
+var fs = require('fs')
+
+app.get('/', function(req, res){
+    res.send("Welcome to the Boulder Restaurant Directory!")
+})
+
+try {
+    var httpsConfig = {
+        key: fs.readFileSync('/etc/letsencrypt/live/boulderrestaurantdirectory.com/privkey.pem'),
+        cert: fs.readFileSync('/etc/letsencrypt/live/boulderrestaurantdirectory.com/cert.pem'),
+    }
+
+    var httpsServer = HTTPS.createServer(httpsConfig, app)
+    // 443 is the default port for HTTPS traffic
+    httpsServer.listen(443)
+    var httpApp = express()
+    httpApp.use(function(req, res, next){
+        res.redirect('https://boulderrestaurantdirectory.com' + req.url)
+    })
+    httpApp.listen(80)
+}
+catch(e){
+    console.log(e)
+    console.log('could not start HTTPS server')
+    var httpServer = HTTP.createServer(app)
+    httpServer.listen(80)
+}
+
+// ====== End Digital Ocean ======
+
 
 // google places API key
 //const key = 'AIzaSyCditWW_QbHS5b178NVjooCD4Fh3QocDBY'; // bt
