@@ -14,9 +14,6 @@ var HTTP = require('http')
 var HTTPS = require('https')
 var fs = require('fs')
 
-app.get('/', function(req, res){
-    res.send("Welcome to the Boulder Restaurant Directory!")
-})
 
 try {
     var httpsConfig = {
