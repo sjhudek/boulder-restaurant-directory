@@ -1,7 +1,7 @@
 var map;
 var infowindow;
 
-$("#displayListing").toggle();
+// $("#displayListing").toggle();
 
 function initMap (){
 
